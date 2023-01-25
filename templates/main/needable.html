@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'main\css\style.css' %}" />
+    <title>{{ page.name }}</title>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav nav">
+            <a class="logo" href="{%url 'index' %}">Менеджер IT-проекта</a>
+        </nav>
+    </header>
+    <div class="side-nav nav">
+        <a href="{%url 'index' %}">
+                <p>Главная</p>
+        </a>
+        <a href="{%url 'geography' %}">
+                <p>География</p>
+        </a>
+        <a href="{%url 'skills' %}">
+                <p>Навыки</p>
+        </a>
+        <a href="{%url 'vacancies'%}">
+                <p>Последние вакансии</p>
+        </a>
+    </div>
+    <main>
+        <section class="needable-diag">
+            <img src="{{ graphs.all.0.image.url }}">
+            <img src="{{ graphs.all.1.image.url }}">
+        </section>
+        <section class="needable-diag">
+            <img src="{{ graphs.all.2.image.url }}">
+            <img src="{{ graphs.all.3.image.url }}">
+        </section>
+        <section class="needable-table">
+            <table>
+                <tr>
+                    <th>Год</th>
+                    <th>Средняя зарплата</th>
+                    <th>Средняя зарплата(Менеджер IT-проекта)</th>
+                    <th>Количество вакансий</th>
+                    <th>Количество вакансий(Менеджер IT-проекта)</th>
+                </tr>
+                <tr>
+                    <td>2015</td>
+                    <td>57259</td>
+                    <td>55064</td>
+                    <td>9358</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>67729</td>
+                    <td>50025</td>
+                    <td>28916</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>69632</td>
+                    <td>49901</td>
+                    <td>38682</td>
+                    <td>102</td>
+                </tr>
+                <tr>
+                    <td>2018</td>
+                    <td>91804</td>
+                    <td>79843</td>
+                    <td>58478</td>
+                    <td>117</td>
+                </tr>
+                <tr>
+                    <td>2019</td>
+                    <td>79153</td>
+                    <td>60375</td>
+                    <td>70559</td>
+                    <td>154</td>
+                </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>75569</td>
+                    <td>69281</td>
+                    <td>87249</td>
+                    <td>176</td>
+                </tr>
+                <tr>
+                    <td>2021</td>
+                    <td>86650</td>
+                    <td>78725</td>
+                    <td>54116</td>
+                    <td>133</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>102513</td>
+                    <td>91528</td>
+                    <td>17030</td>
+                    <td>53</td>
+                </tr>                
+            </table>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p class="name">Шарашенидзе Артур Манучарович</p>
+        <p class="group">РИ - 210914</p>
+    </footer>
+</body>
+</html>

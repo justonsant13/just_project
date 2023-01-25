@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'main\css\style.css' %}" />
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav nav">
+            <a class="logo" href="{%url 'index' %}">Менеджер IT-проекта</a>
+        </nav>
+    </header>
+    <div class="side-nav nav">
+        <a href="{%url 'needable' %}">
+                <p>Востребованность</p>
+        </a>
+        <a href="{%url 'geography' %}">
+                <p>География</p>
+        </a>
+        <a href="{%url 'skills' %}">
+                <p>Навыки</p>
+        </a>
+        <a href="{%url 'index'%}">
+                <p>Главная</p>
+        </a>
+    </div>
+    <main>
+        <section class="main-vakans">
+            <h1>Последние вакансии</h1>
+            <table class="table-vakans">
+                <tr>
+                    <th>Название</th>
+                    <th>Описание</th>
+                    <th>Навыки</th>
+                    <th>Компания</th>
+                    <th>Оклад</th>
+                    <th>Регион</th>
+                    <th>Дата</th>
+                </tr>
+                {% for vacancy in vacancies %}
+                    <tr>
+                        <td>{{ vacancy.name }}</td>
+                        <td>{{ vacancy.description}}</td>
+                        <td>{{ vacancy.skills | safe }}</td>
+                        <td>{{ vacancy.employer }}</td>
+                        <td>{{ vacancy.salary }}</td>
+                        <td>{{ vacancy.region }}</td>
+                        <td>{{ vacancy.published_at }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p class="name">Шарашенидзе Артур Манучарович</p>
+        <p class="group">РИ - 210914</p>
+    </footer>
+</body>

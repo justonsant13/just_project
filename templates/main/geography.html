@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'main\css\style.css' %}" />
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav nav">
+            <a class="logo" href="{%url 'index' %}">Менеджер IT-проекта</a>
+        </nav>
+    </header>
+    <div class="side-nav nav">
+        <a href="{%url 'needable' %}">
+                <p>Востребованность</p>
+        </a>
+        <a href="{%url 'index' %}">
+                <p>Главная</p>
+        </a>
+        <a href="{%url 'skills' %}">
+                <p>Навыки</p>
+        </a>
+        <a href="{%url 'vacancies'%}">
+                <p>Последние вакансии</p>
+        </a>
+    </div>
+    <main>
+        <section class="geograph-main sec-1">
+            <img src="{{ graphs.all.0.image.url }}" alt="" class="stolb">
+            <table class="table">
+                <tr>
+                    <th>Город</th>
+                    <th>Уровень зарплат</th>
+                </tr>
+                <tr>
+                    <td>Киев</td>
+                    <td>155942</td>
+                </tr>
+                <tr>
+                    <td>Москва</td>
+                    <td>109916</td>
+                </tr>
+                <tr>
+                    <td>Санкт-Петербург</td>
+                    <td>95863</td>
+                </tr>
+                <tr>
+                    <td>Минск</td>
+                    <td>89762</td>
+                </tr>
+                <tr>
+                    <td>Новосибирск</td>
+                    <td>86183</td>
+                </tr>
+                <tr>
+                    <td>Екатеринбург</td>
+                    <td>82063</td>
+                </tr>
+                <tr>
+                    <td>Нижний Новгород</td>
+                    <td>76677</td>
+                </tr>
+                <tr>
+                    <td>Казань</td>
+                    <td>75695</td>
+                </tr>
+                <tr>
+                    <td>Самара</td>
+                    <td>69896</td>
+                </tr>
+                <tr>
+                    <td>Томск</td>
+                    <td>69552</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="geograph-main sec-2">
+            <img src="{{ graphs.all.1.image.url }}" alt="" class="diagramma">
+            <table>
+                <tr>
+                    <th>Город</th>
+                    <th>Доля вакансий</th>
+                </tr>
+                <tr>
+                    <td>Москва</td>
+                    <td>25.73%</td>
+                </tr>
+                <tr>
+                    <td>Санкт-Петербург</td>
+                    <td>11.31%</td>
+                </tr>
+                <tr>
+                    <td>Новосибирск</td>
+                    <td>3.24%</td>
+                </tr>
+                <tr>
+                    <td>Минск</td>
+                    <td>2.83%</td>
+                </tr>
+                <tr>
+                    <td>Екатеринбург</td>
+                    <td>2.39%</td>
+                </tr>
+                <tr>
+                    <td>Алматы</td>
+                    <td>2.25%</td>
+                </tr>
+                <tr>
+                    <td>Казань</td>
+                    <td>2.22%</td>
+                </tr>
+                <tr>
+                    <td>Краснодар</td>
+                    <td>2.05%</td>
+                </tr>
+                <tr>
+                    <td>Ростов-на-Дону</td>
+                    <td>1.86%</td>
+                </tr>
+                <tr>
+                    <td>Нижний Новгород</td>
+                    <td>1.86%</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <p class="name">Шарашенидзе Артур Манучарович</p>
+        <p class="group">РИ - 210914</p>
+    </footer>
+</body>
+</html>
